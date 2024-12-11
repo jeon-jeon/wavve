@@ -7,7 +7,7 @@ import { Autoplay, Navigation } from "swiper/modules";
 const MainSwiper = ({ list }) => {
   return (
     <Swiper
-      className="w-[90%] h-[90%]"
+      className="w-full h-[80%]"
       modules={[Navigation, Autoplay]}
       navigation={true}
       autoplay={{ delay: 3000 }}
@@ -24,11 +24,11 @@ const MainSwiper = ({ list }) => {
             position: "relative",
           }}
         >
-          <div className="absolute bottom-28 left-20 flex flex-col gap-4">
-            <span className="text-2xl ">{v.title}</span>
+          <div className="absolute bottom-32 left-20 flex flex-col gap-4">
+            <span className="text-2xl">{v.title}</span>
             <button
               type="button"
-              className=" text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5"
+              className="border border-white w-28 h-10"
               onClick={() => {
                 location.href = `/movies/${v.id}`;
               }}

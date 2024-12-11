@@ -1,6 +1,6 @@
-import MainSwiper from "./MainSwiper";
+import MovieGrid from "@/components/MovieGrid";
 
-const MovieSlider = async () => {
+const Page = async () => {
   const options = {
     method: "GET",
     headers: {
@@ -10,20 +10,20 @@ const MovieSlider = async () => {
     },
   };
 
-  const popular_movies = await fetch(
-    "https://api.themoviedb.org/3/movie/popular?language=ko-KR&page=1",
+  const upcoming_movies = await fetch(
+    "https://api.themoviedb.org/3/movie/upcoming?language=ko-KR&page=1",
     options
   )
     .then((res) => res.json())
     .then((v) => v.results);
 
-  // console.log(popular_movies);
+  console.log(upcoming_movies);
 
   return (
-    <section className="max-w-screen-lg m-auto h-full">
-      <MainSwiper list={popular_movies} />
+    <section className="max-w-screen-lg m-auto flex flex-col py-10 gap-6">
+      <MovieGrid list={upcoming_movies} />
     </section>
   );
 };
 
-export default MovieSlider;
+export default Page;

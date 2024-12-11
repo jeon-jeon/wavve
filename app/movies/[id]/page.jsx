@@ -22,13 +22,15 @@ const Page = async ({ params }) => {
   console.log(detail_movie);
 
   return (
-    <div className="w-screen h-screen">
+    <section className="w-screen h-screen">
       <MovieDetail
+        backdrop_path={url + detail_movie.backdrop_path}
         imgSrc={url + detail_movie.poster_path}
         title={detail_movie.title}
         overview={detail_movie.overview}
+        genres={detail_movie.genres}
       />
-    </div>
+    </section>
   );
 };
 
