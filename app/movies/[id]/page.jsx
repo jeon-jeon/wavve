@@ -3,8 +3,7 @@ import { API, OPTIONS } from "@/constants/api";
 import { getDetailAPI } from "@/util/function";
 
 const Page = async ({ params }) => {
-  const { id } = params;
-
+  const { id } = await params;
   const detail = await getDetailAPI(API.movie.detailKr(id), OPTIONS);
   const detail_en = await getDetailAPI(API.movie.detailEn(id), OPTIONS);
 

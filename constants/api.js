@@ -12,8 +12,11 @@ export const API = {
       "https://api.themoviedb.org/3/movie/now_playing?language=ko-KR&page=1",
     upcoming:
       "https://api.themoviedb.org/3/movie/upcoming?language=ko-KR&page=1",
+
     detailKr: (id) => applyIdAPIKoKr(id),
     detailEn: (id) => applyIdAPIEnUs(id),
+
+    genre: "https://api.themoviedb.org/3/genre/movie/list?language=ko",
   },
 };
 

@@ -6,7 +6,7 @@ const SliderTitle = ({ title, link }) => {
     <div className="pt-10 pb-3 flex font-semibold justify-between items-end">
       <span className="text-2xl">{title}</span>
       <Link href={link}>
-        <span className="text-sm flex items-center gap-1">
+        <span className="text-sm flex items-center gap-1 text-gray-300">
           더보기 <MdNavigateNext />
         </span>
       </Link>

@@ -1,11 +1,17 @@
-import MovieGrid from "@/components/MovieGrid";
+import PageLayout from "@/components/PageLayout";
 import { API, OPTIONS } from "@/constants/api";
-import { getMovieAPI } from "@/util/function";
+import { getGenreAPI, getMovieAPI } from "@/util/function";
 
 const Page = async () => {
+  const genreList = await getGenreAPI(API.movie.genre, OPTIONS);
+  const movieList = await getMovieAPI(API.movie.nowPlaying, OPTIONS);
   return (
     <>
-      <MovieGrid list={await getMovieAPI(API.movie.nowPlaying, OPTIONS)} />
+      <PageLayout
+        title={"현재상영작"}
+        genreList={genreList}
+        movieList={movieList}
+      />
     </>
   );
 };
