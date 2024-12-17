@@ -1,4 +1,4 @@
-import GenresBadge from "./genresBadge";
+import GenresBadge from "./GenresBadge";
 
 const MovieDetail = ({
   backdrop_path,
