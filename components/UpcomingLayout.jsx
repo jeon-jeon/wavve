@@ -1,3 +1,6 @@
+import Link from "next/link";
+import MovieCard from "./MovieCard";
+
 const UpcomingLayout = ({ genreList, movieList }) => {
   const [selectedValue, setSelectedValue] = useState(0);
   const [movieArr, setMovieArr] = useState(movieList);
