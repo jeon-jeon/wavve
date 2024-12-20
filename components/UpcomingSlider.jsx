@@ -1,7 +1,7 @@
 import { getMovieAPI } from "@/util/function";
-import CardSwiper from "./CardSwiper";
 import { API, OPTIONS } from "@/constants/api";
 import SliderTitle from "./SliderTitle";
+import CardSwiper from "./CardSwiper";
 
 const UpcomingSlider = async () => {
   return (

@@ -1,20 +1,20 @@
 "use client";
 import { API } from "@/constants/api";
-import MovieCard from "./MovieCard";
 import Link from "next/link";
 import { useState } from "react";
+import MovieCard from "./MovieCard";
 
 const PageLayout = ({ title, genreList, movieList }) => {
-  const [selectedValue, setSelectedValue] = useState(0);
   const [movieArr, setMovieArr] = useState(movieList);
 
   const change = (e) => {
     const selectedGenre = parseInt(e.target.value, 10);
-    setSelectedValue(selectedGenre);
-    setMovieArr(() => {
-      if (selectedGenre === 0) return movieList;
-      return movieList.filter((v) => v.genre_ids.includes(selectedGenre));
-    });
+
+    setMovieArr(() =>
+      selectedGenre
+        ? movieList.filter((v) => v.genre_ids.includes(selectedGenre))
+        : movieList
+    );
   };
 
   return (
